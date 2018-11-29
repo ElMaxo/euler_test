@@ -1,0 +1,11 @@
+<div class="phx-hero">
+  <input id="inn-check-button" type="button" value="Отправить" style="float: right"></input>
+  <div style="overflow: hidden; padding-right: .5em;">
+      <input id="inn-input" type="text"></input>
+  </div>
+  <div id="check-results">
+  <%= Enum.map(@history, fn(check) -> %>
+    <p style="float: left">[<%= check.checked %>] <%= check.inn %>: <%= if check.valid do "корректен" else "некорректен" end %></p><br/>
+  <% end) %>
+  </div>
+</div>
